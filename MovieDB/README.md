@@ -1,4 +1,4 @@
- If you prefer the latex version : [](./Write_up_MovieDB.pdf)
+ If you prefer the latex version : [Write_up_latex](./Write_up_MovieDB.pdf)
  
  # Reconnaissance
  ![i1](dbmovie.jpg)
