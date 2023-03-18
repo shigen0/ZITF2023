@@ -8,10 +8,10 @@ Write-ups for the web challenges that I solved in the Zitf 2023, I was able to g
 
 # Individual performance
 
-Challenges that I solved :
+### Challenges that I solved :
 
 ![i2](challs.jpg)
 
-Score over time :
+### Score over time :
 
 ![i2](time.png)
