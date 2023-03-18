@@ -8,7 +8,7 @@ We clearly recognize that there's a potential SSTI (Server-Side template injecti
 
 ![i2](6.jpg)
 
-After uploading an image, we see it in uploads/
+So we see that the {7*7} is well interpreted
 
 ![i2](14.jpg)
 
