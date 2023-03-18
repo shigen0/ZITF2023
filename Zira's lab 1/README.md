@@ -12,7 +12,7 @@ The exploitation part is very short because it could be made fastly with that fo
 
 The result decoded gives us the login page code (at the start of the code line 6 in the screen), with precious ids
 
-```php```
+```php
 <?php session_start(); /* Starts the session */
 
         /* Check Login form submitted */
@@ -38,7 +38,6 @@ The result decoded gives us the login page code (at the start of the code line 6
 
 include('html/login.html');
 ?>
-```php```
 
 We connect with zira and MyUnguessablePasswordNotInRockYouMWAHAHAHA on login.php and we have access to protect.php which displays the flag !
 
