@@ -14,4 +14,4 @@ Challenges that I solved :
 
 Score over time :
 
-![i2](Score over Time.png)
+![i2](time.png)
