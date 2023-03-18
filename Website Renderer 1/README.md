@@ -1,4 +1,4 @@
-If you prefer the text version : 
+If you prefer the text version : [Write_up_latex](./WU_website_renderer.pdf)
 
 # Reconnaissance
 
