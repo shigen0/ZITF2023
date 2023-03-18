@@ -1,3 +1,5 @@
+If you prefer the text version : 
+
 # Reconnaissance
 
 With this challenge we immediately guess that there's a file upload vulnerability
