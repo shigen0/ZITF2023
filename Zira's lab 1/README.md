@@ -12,6 +12,32 @@ The exploitation part is very short because it could be made fastly with that fo
 
 The result decoded gives us the login page code (at the start of the code line 6 in the screen), with precious ids
 
-![image](https://user-images.githubusercontent.com/75220653/226102650-8a080701-32a4-45a5-a631-b3fd1f795bf4.png)
+````php``
+<?php session_start(); /* Starts the session */
+
+        /* Check Login form submitted */
+        if(isset($_POST['Submit'])){
+                /* Define username and associated password array */
+                $logins = array('zira' => 'MyUnguessablePasswordNotInRockYouMWAHAHAHA');
+
+                /* Check and assign submitted Username and Password to new variable */
+                $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
+                $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+
+                /* Check Username and Password existence in defined array */
+                if (isset($logins[$Username]) && $logins[$Username] == $Password){
+                        /* Success: Set session variables and redirect to Protected page  */
+                        $_SESSION['UserData']['Username']=$logins[$Username];
+                        header("location:protect.php");
+                        exit;
+                } else {
+                        /*Unsuccessful attempt: Set error message */
+                        $msg="<span style='color:red'>Invalid Login Details</span>";
+                }
+        }
+
+include('html/login.html');
+?>
+````php``
 
 Flagged !
