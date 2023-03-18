@@ -4,13 +4,14 @@ If you prefer the text version : [Write_up_latex](./WU_website_renderer.pdf)
 
 We clearly recognize that there's a potential SSTI (Server-Side template injection) in this challenge. The idea for beginning the exploiting part is to run a basic payload to see what it gives:
 
+ # Exploitation
+
 ![i2](6.jpg)
 
 After uploading an image, we see it in uploads/
 
 ![i2](14.jpg)
 
- # Exploitation
 
 First we'll upload an .htaccess that will allow us to upload jpg files but interpreted as php. The trick here is to inject some php code in the jpg file, we can use burpsuite for it.
 The .htaccess file contains `AddType application/x-httpd-php .jpg`.
