@@ -2,9 +2,9 @@ If you prefer the text version : [Write_up_latex](./WU_website_renderer.pdf)
 
 # Reconnaissance
 
-With this challenge we immediately guess that there's a file upload vulnerability
+We clearly recognize that there's a potential SSTI (Server-Side template injection) in this challenge. The idea for beginning the exploiting part is to run a basic payload to see what it gives:
 
-![i2](13.jpg)
+![i2](6.jpg)
 
 After uploading an image, we see it in uploads/
 
