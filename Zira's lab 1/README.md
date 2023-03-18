@@ -38,6 +38,7 @@ The result decoded gives us the login page code (at the start of the code line 6
 
 include('html/login.html');
 ?>
+```
 
 We connect with zira and MyUnguessablePasswordNotInRockYouMWAHAHAHA on login.php and we have access to protect.php which displays the flag !
 
