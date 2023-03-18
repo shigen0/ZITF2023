@@ -4,7 +4,7 @@ With this challenge we immediately guess that there's a file upload vulnerabilit
 
 ![i2](13.jpg)
 
-After uploading an image, we see it in uploads/nameofthefile.jpg
+After uploading an image, we see it in uploads/
 
 ![i2](14.jpg)
 
